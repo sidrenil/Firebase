@@ -22,10 +22,10 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/profiladsoyad"
+        android:id="@+id/profilemail"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:text="Adınız Soyadınız"
+        android:text="email"
         android:textAlignment="center"
         android:textColor="@color/textColor"
         android:textSize="20dp"
@@ -35,16 +35,28 @@
         android:layout_marginTop="64dp"/>
 
     <TextView
-        android:id="@+id/profilemail"
+        android:id="@+id/profilparola"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:text="  E-mail Adresiniz"
+        android:text="parola"
         android:textAlignment="center"
         android:textColor="@color/textColor"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profiladsoyad"
+        app:layout_constraintTop_toBottomOf="@+id/profilemail"
+        android:layout_marginTop="30dp"/>
+    <TextView
+        android:id="@+id/profilad"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:text="ad"
+        android:textAlignment="center"
+        android:textColor="@color/textColor"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilparola"
         android:layout_marginTop="30dp"/>
 
     <Button
@@ -60,7 +72,7 @@
         tools:ignore="MissingConstraints"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilemail"
+        app:layout_constraintTop_toBottomOf="@+id/profilad"
         android:layout_marginTop="100dp"/>
 
     <Button

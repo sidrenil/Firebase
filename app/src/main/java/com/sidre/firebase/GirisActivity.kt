@@ -1,10 +1,8 @@
 package com.sidre.firebase
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -14,7 +12,6 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.ktx.Firebase
 
 
 class GirisActivity : AppCompatActivity() {
@@ -24,8 +21,8 @@ class GirisActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_giris)
 
-        val girisemail: EditText = findViewById(R.id.girisemail)
-        val girisparola: EditText = findViewById(R.id.girisparola)
+        val girisEmail: EditText = findViewById(R.id.girisemail)
+        val girisParola: EditText = findViewById(R.id.girisparola)
         val girisyapbutton: Button = findViewById(R.id.girisyapbutton)
         val girisyeniuyelik:TextView = findViewById(R.id.girisyeniuyelik)
 
@@ -33,16 +30,16 @@ class GirisActivity : AppCompatActivity() {
 
         girisyapbutton.setOnClickListener {
             when {
-                TextUtils.isEmpty(girisemail.text.toString().trim { it <= ' ' }) -> {
+                TextUtils.isEmpty(girisEmail.text.toString().trim { it <= ' ' }) -> {
                     Toast.makeText(this@GirisActivity,"email gir",Toast.LENGTH_SHORT).show()
                 }
 
-                TextUtils.isEmpty(girisparola.text.toString().trim { it <= ' ' }) -> {
+                TextUtils.isEmpty(girisParola.text.toString().trim { it <= ' ' }) -> {
                     Toast.makeText(this@GirisActivity,"parola gir",Toast.LENGTH_SHORT).show()
                 }
                 else -> {
-                    val email: String = girisemail.text.toString().trim{ it <= ' ' }
-                    val password: String = girisemail.text.toString().trim{ it <= ' ' }
+                    val email: String = girisEmail.text.toString().trim{ it <= ' ' }
+                    val password: String = girisParola.text.toString().trim{ it <= ' ' }
 
                     girisyapbutton.isEnabled=false
 
