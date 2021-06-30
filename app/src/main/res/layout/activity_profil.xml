@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/constraintbackground"
+    tools:context=".ProfilActivity">
+
+    <TextView
+        android:id="@+id/profiltext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PROFİL BİLGİLERİ"
+        android:textColor="@color/textColor"
+        android:textSize="40sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="64dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/profiladsoyad"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:text="Adınız Soyadınız"
+        android:textAlignment="center"
+        android:textColor="@color/textColor"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profiltext"
+        android:layout_marginTop="64dp"/>
+
+    <TextView
+        android:id="@+id/profilemail"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:text="  E-mail Adresiniz"
+        android:textAlignment="center"
+        android:textColor="@color/textColor"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profiladsoyad"
+        android:layout_marginTop="30dp"/>
+
+    <Button
+        android:id="@+id/profilbilgilerimiguncellebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buttonbackground"
+        android:backgroundTint="@color/buttonColor"
+        android:text="Bilgilerimi Güncelle"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilemail"
+        android:layout_marginTop="100dp"/>
+
+    <Button
+        android:id="@+id/profilcikisyapbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buttonbackground"
+        android:backgroundTint="@color/buttonColor"
+        android:text="Çıkış"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilbilgilerimiguncellebutton"
+        android:layout_marginTop="32dp"/>
+
+    <Button
+        android:id="@+id/profilhesabimisilbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buttonbackground"
+        android:backgroundTint="@color/buttonColor"
+        android:text="Hesabımı Sil"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilcikisyapbutton"
+        android:layout_marginTop="32dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
