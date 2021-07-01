@@ -11,7 +11,6 @@ import com.sidre.firebase.databinding.ActivityUyeBinding
 class UyeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityUyeBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)

@@ -77,7 +77,6 @@
         app:layout_constraintTop_toBottomOf="@+id/uyeEmail"
         tools:ignore="MissingConstraints" />
 
-
     <Button
         android:id="@+id/uyeKaydetButon"
         android:layout_width="wrap_content"

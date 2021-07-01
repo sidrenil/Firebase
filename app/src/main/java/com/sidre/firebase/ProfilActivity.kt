@@ -19,7 +19,6 @@ class ProfilActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProfilBinding
     private lateinit var preferences: SharedPreferences
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityProfilBinding.inflate(layoutInflater)

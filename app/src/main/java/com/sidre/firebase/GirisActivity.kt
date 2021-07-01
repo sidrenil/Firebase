@@ -26,8 +26,6 @@ class GirisActivity : AppCompatActivity() {
         val girisYapButon: Button = findViewById(R.id.girisyapbutton)
         val girisYeniUyelik: TextView = findViewById(R.id.girisYeniUyelik)
 
-
-
         girisYapButon.setOnClickListener {
             when {
                 TextUtils.isEmpty(girisEmail.text.toString().trim { it <= ' ' }) -> {
