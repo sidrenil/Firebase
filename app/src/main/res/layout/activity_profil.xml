@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,74 +8,73 @@
     tools:context=".ProfilActivity">
 
     <TextView
-        android:id="@+id/profiltext"
+        android:id="@+id/profilText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
         android:text="PROFİL BİLGİLERİ"
         android:textColor="@color/textColor"
         android:textSize="40sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="64dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/profilemail"
+        android:id="@+id/profilEmail"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
         android:text="email"
         android:textAlignment="center"
         android:textColor="@color/textColor"
         android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profiltext"
-        android:layout_marginTop="64dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilText" />
 
     <TextView
-        android:id="@+id/profilparola"
+        android:id="@+id/profilParola"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:text="parola"
         android:textAlignment="center"
         android:textColor="@color/textColor"
         android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilemail"
-        android:layout_marginTop="30dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilEmail" />
+
     <TextView
-        android:id="@+id/profilad"
+        android:id="@+id/profilAd"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:text="ad"
         android:textAlignment="center"
         android:textColor="@color/textColor"
         android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilparola"
-        android:layout_marginTop="30dp"/>
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilParola" />
 
 
     <Button
-        android:id="@+id/profilcikisyapbutton"
+        android:id="@+id/profilCikisYapButon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:background="@drawable/buttonbackground"
         android:backgroundTint="@color/buttonColor"
         android:text="Çıkış"
         android:textAllCaps="false"
-        android:textSize="20sp"
         android:textColor="@color/white"
-        tools:ignore="MissingConstraints"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilad"
-        android:layout_marginTop="32dp"/>
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilAd"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

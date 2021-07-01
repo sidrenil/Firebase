@@ -29,18 +29,18 @@ class ProfilActivity : AppCompatActivity() {
         val database = FirebaseDatabase.getInstance().reference
 
 
-        val getdata = object :ValueEventListener{
+        val getdata = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
 
 
-                val adsoyad = snapshot.child("uemail").value
-                binding.profilemail.text= adsoyad.toString()
+                val adSoyad = snapshot.child("uemail").value
+                binding.profilEmail.text = adSoyad.toString()
 
                 val email = snapshot.child("uparola").value
-                binding.profilparola.text = email.toString()
+                binding.profilParola.text = email.toString()
 
                 val uyeAdi = snapshot.child("uyeAdi").value
-                binding.profilad.text = uyeAdi.toString()
+                binding.profilAd.text = uyeAdi.toString()
             }
 
 
@@ -51,7 +51,7 @@ class ProfilActivity : AppCompatActivity() {
         }
         database.addListenerForSingleValueEvent(getdata)
 
-        binding.profilcikisyapbutton.setOnClickListener {
+        binding.profilCikisYapButon.setOnClickListener {
             intent = Intent(applicationContext, GirisActivity::class.java)
             startActivity(intent)
             finish()

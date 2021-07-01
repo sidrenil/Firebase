@@ -21,58 +21,66 @@ class GirisActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_giris)
 
-        val girisEmail: EditText = findViewById(R.id.girisemail)
-        val girisParola: EditText = findViewById(R.id.girisparola)
-        val girisyapbutton: Button = findViewById(R.id.girisyapbutton)
-        val girisyeniuyelik:TextView = findViewById(R.id.girisyeniuyelik)
+        val girisEmail: EditText = findViewById(R.id.girisEmail)
+        val girisParola: EditText = findViewById(R.id.girisParola)
+        val girisYapButon: Button = findViewById(R.id.girisyapbutton)
+        val girisYeniUyelik: TextView = findViewById(R.id.girisYeniUyelik)
 
 
 
-        girisyapbutton.setOnClickListener {
+        girisYapButon.setOnClickListener {
             when {
                 TextUtils.isEmpty(girisEmail.text.toString().trim { it <= ' ' }) -> {
-                    Toast.makeText(this@GirisActivity,"email gir",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@GirisActivity, "email gir", Toast.LENGTH_SHORT).show()
                 }
 
                 TextUtils.isEmpty(girisParola.text.toString().trim { it <= ' ' }) -> {
-                    Toast.makeText(this@GirisActivity,"parola gir",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@GirisActivity, "parola gir", Toast.LENGTH_SHORT).show()
                 }
                 else -> {
-                    val email: String = girisEmail.text.toString().trim{ it <= ' ' }
-                    val password: String = girisParola.text.toString().trim{ it <= ' ' }
+                    val email: String = girisEmail.text.toString().trim { it <= ' ' }
+                    val password: String = girisParola.text.toString().trim { it <= ' ' }
 
-                    girisyapbutton.isEnabled=false
+                    girisYapButon.isEnabled = false
 
-                    FirebaseAuth.getInstance().signInWithEmailAndPassword(email,password)
+                    FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(
-                            OnCompleteListener<AuthResult> {task ->
-                            if (task.isSuccessful){
-                                val firebaseUser:FirebaseUser = task.result!!.user!!
+                            OnCompleteListener<AuthResult> { task ->
+                                if (task.isSuccessful) {
+                                    val firebaseUser: FirebaseUser = task.result!!.user!!
 
-                                Toast.makeText(this@GirisActivity,"basarılı",Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(
+                                        this@GirisActivity,
+                                        "basarılı",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
 
 
+                                    val intent =
+                                        Intent(this@GirisActivity, ProfilActivity::class.java)
+                                    intent.flags =
+                                        Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                    intent.putExtra("user_id", firebaseUser.uid)
+                                    intent.putExtra("email_id", email)
 
-                                val intent = Intent(this@GirisActivity,ProfilActivity::class.java)
-                                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                                intent.putExtra("user_id" , firebaseUser.uid)
-                                intent.putExtra("email_id" , email)
+                                    startActivity(intent)
+                                    finish()
 
-                                startActivity(intent)
-                                finish()
-
-                            }
-                                else {
-                                    Toast.makeText(this@GirisActivity,task.exception!!.message.toString(),Toast.LENGTH_SHORT).show()
-                            }
+                                } else {
+                                    Toast.makeText(
+                                        this@GirisActivity,
+                                        task.exception!!.message.toString(),
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
 
                             })
                 }
             }
 
         }
-        girisyeniuyelik.setOnClickListener {
-            val intent = Intent(this@GirisActivity,UyeActivity::class.java)
+        girisYeniUyelik.setOnClickListener {
+            val intent = Intent(this@GirisActivity, UyeActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
             finish()

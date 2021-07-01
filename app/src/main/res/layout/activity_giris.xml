@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,7 +9,7 @@
 
 
     <TextView
-        android:id="@+id/girisyeniuyelik"
+        android:id="@+id/girisYeniUyelik"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -19,14 +18,13 @@
         android:drawableLeft="@drawable/add"
         android:text="yeni üyelik"
         android:textColor="@color/textColor"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/girisyapbutton"
         android:textSize="15sp"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/girisyapbutton" />
 
     <TextView
-        android:id="@+id/giristext"
+        android:id="@+id/girisText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -35,15 +33,13 @@
         android:text="HOS GELDİNİZ"
         android:textColor="@color/textColor"
         android:textSize="40sp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <EditText
-        android:id="@+id/girisemail"
+        android:id="@+id/girisEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -56,14 +52,14 @@
         android:padding="10dp"
         android:textColor="@color/textColor"
         android:textColorHint="@color/textColor"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/giristext"
         android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/girisText"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/girisparola"
+        android:id="@+id/girisParola"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -77,13 +73,13 @@
         android:textColor="@color/textColor"
         android:textColorHint="@color/textColor"
         android:textSize="16dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/girisemail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/girisEmail"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/girisyapbutton"
+        android:id="@+id/girisYapButon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -92,12 +88,12 @@
         android:background="@drawable/buttonbackground"
         android:backgroundTint="@color/buttonColor"
         android:text="Giriş"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/girisparola"
+        app:layout_constraintTop_toBottomOf="@+id/girisParola"
         tools:ignore="MissingConstraints" />
 
 

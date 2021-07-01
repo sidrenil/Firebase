@@ -1,17 +1,8 @@
 package com.sidre.firebase
 
-class Uye {
+data class Uye(
+    val uyeAdi: String = "",
+    val uEmail: String = "",
+    val uParola: String = ""
+)
 
-    var uyeAdi :String=""
-    var uemail:String=""
-    var uparola:String=""
-
-
-    constructor(uemail:String,uparola:String,uyeAdi:String){
-
-        this.uyeAdi = uyeAdi
-        this.uemail = uemail
-        this.uparola = uparola
-
-    }
-}
