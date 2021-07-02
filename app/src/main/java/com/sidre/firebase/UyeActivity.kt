@@ -25,8 +25,6 @@ class UyeActivity : AppCompatActivity() {
             val uyeEmail = binding.uyeEmail.text.toString()
             val uyeParola = binding.uyeParola.text.toString()
 
-
-
             if (uyeAdSoyad.isEmpty() || uyeEmail.isEmpty() || uyeParola.isEmpty()) {
                 Toast.makeText(this, "bos birakilmaz", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -36,10 +34,14 @@ class UyeActivity : AppCompatActivity() {
                     if (it.isSuccessful)
                         return@addOnCompleteListener
                 }
-            database.setValue(Uye(uyeAdSoyad, uyeEmail, uyeParola))
+
+            var id = database.push()
+            id.child("id").setValue(id.key.toString())
+            id.setValue(Uye(uyeAdSoyad,uyeEmail,uyeParola))
 
             val intent = Intent(this@UyeActivity, ProfilActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+
             startActivity(intent)
             finish()
         }

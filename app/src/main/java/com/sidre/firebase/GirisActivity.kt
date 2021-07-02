@@ -23,7 +23,7 @@ class GirisActivity : AppCompatActivity() {
 
         val girisEmail: EditText = findViewById(R.id.girisEmail)
         val girisParola: EditText = findViewById(R.id.girisParola)
-        val girisYapButon: Button = findViewById(R.id.girisyapbutton)
+        val girisYapButon: Button = findViewById(R.id.girisYapButon)
         val girisYeniUyelik: TextView = findViewById(R.id.girisYeniUyelik)
 
         girisYapButon.setOnClickListener {
