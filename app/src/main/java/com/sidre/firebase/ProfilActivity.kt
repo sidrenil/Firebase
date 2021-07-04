@@ -7,10 +7,13 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.sidre.firebase.databinding.ActivityProfilBinding
 import org.w3c.dom.Comment
 import java.lang.StringBuilder
+
+
 
 
 class ProfilActivity : AppCompatActivity() {
@@ -28,15 +31,27 @@ class ProfilActivity : AppCompatActivity() {
         val getdata = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
 
+                val UsEmail = intent.extras?.get("email_id")
 
-                val uyeAdi = snapshot.child("uyeAdi").value
-                binding.profilAd.text = uyeAdi.toString()
+                snapshot.children.forEach{ uid ->
+                    if (uid.child("uyeEmail").value == UsEmail){
+                        val uyeAdi = uid.child("uyeAdi").value
 
-                val email = snapshot.child("uyeEmail").value
-                binding.profilEmail.text = email.toString()
 
-                val parola = snapshot.child("uyeParola").value
-                binding.profilParola.text = parola.toString()
+                        val email = uid.child("uyeEmail").value
+
+
+                        val parola = uid.child("uyeParola").value
+
+
+                        binding.profilAd.text = uyeAdi.toString()
+                        binding.profilEmail.text = email.toString()
+                        binding.profilParola.text = parola.toString()
+                    }
+
+                }
+
+
 
             }
 
@@ -46,6 +61,8 @@ class ProfilActivity : AppCompatActivity() {
 
         }
 
+        database.addValueEventListener(getdata)
+
 
         binding.profilCikisYapButon.setOnClickListener {
             intent = Intent(applicationContext, GirisActivity::class.java)
@@ -54,5 +71,3 @@ class ProfilActivity : AppCompatActivity() {
         }
     }
 }
-
-
