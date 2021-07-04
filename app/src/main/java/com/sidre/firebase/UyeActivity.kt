@@ -37,11 +37,10 @@ class UyeActivity : AppCompatActivity() {
 
             var id = database.push()
             id.child("id").setValue(id.key.toString())
-            id.setValue(Uye(uyeAdSoyad,uyeEmail,uyeParola))
+            id.setValue(Uye(uyeAdSoyad, uyeEmail, uyeParola))
 
             val intent = Intent(this@UyeActivity, ProfilActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-
             startActivity(intent)
             finish()
         }

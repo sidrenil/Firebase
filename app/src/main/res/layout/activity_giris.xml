@@ -7,7 +7,6 @@
     android:background="@drawable/constraintbackground"
     tools:context=".GirisActivity">
 
-
     <TextView
         android:id="@+id/girisYeniUyelik"
         android:layout_width="wrap_content"
@@ -36,7 +35,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <EditText
         android:id="@+id/girisEmail"
@@ -95,6 +93,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/girisParola"
         tools:ignore="MissingConstraints" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

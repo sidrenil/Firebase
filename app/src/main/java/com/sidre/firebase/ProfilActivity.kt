@@ -13,9 +13,6 @@ import com.sidre.firebase.databinding.ActivityProfilBinding
 import org.w3c.dom.Comment
 import java.lang.StringBuilder
 
-
-
-
 class ProfilActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProfilBinding
     private lateinit var preferences: SharedPreferences
@@ -25,7 +22,6 @@ class ProfilActivity : AppCompatActivity() {
         val binding = ActivityProfilBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         val database = FirebaseDatabase.getInstance().reference
 
         val getdata = object : ValueEventListener {
@@ -33,36 +29,26 @@ class ProfilActivity : AppCompatActivity() {
 
                 val UsEmail = intent.extras?.get("email_id")
 
-                snapshot.children.forEach{ uid ->
-                    if (uid.child("uyeEmail").value == UsEmail){
-                        val uyeAdi = uid.child("uyeAdi").value
-
+                snapshot.children.forEach { uid ->
+                    if (uid.child("uyeEmail").value == UsEmail) {
 
                         val email = uid.child("uyeEmail").value
-
+                        binding.profilEmail.text = email.toString()
 
                         val parola = uid.child("uyeParola").value
-
-
-                        binding.profilAd.text = uyeAdi.toString()
-                        binding.profilEmail.text = email.toString()
                         binding.profilParola.text = parola.toString()
+
+
+                        val uyeAdi = uid.child("uyeAdi").value
+                        binding.profilAd.text = uyeAdi.toString()
                     }
-
                 }
-
-
-
             }
-
-
             override fun onCancelled(error: DatabaseError) {
             }
-
         }
 
         database.addValueEventListener(getdata)
-
 
         binding.profilCikisYapButon.setOnClickListener {
             intent = Intent(applicationContext, GirisActivity::class.java)
